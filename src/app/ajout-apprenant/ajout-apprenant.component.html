@@ -1,0 +1,138 @@
+
+
+
+<body>
+<app-menu></app-menu>  
+          <div class="container">
+            <div>{{apprenant|json}}</div>
+            <div class="container">
+                <div class="mx-auto p-4" style="width: 800px; margin-top: 5%; border: solid 1px; border-radius: 10px;">
+                  <div style="text-align: center; margin-bottom: 14px; ">
+                   <div class="form-header ">
+                      <h1>Ajouter un apprenant</h1>
+                  </div>
+                  </div>
+                  <form class="row g-3" #appForm="ngForm" (ngSubmit)="saveApp()">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">Numero</label>
+                      <input [(ngModel)]="apprenant.id" type="number" name="id" class="form-control" id="inputEmail4" autofocus>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">Nom</label>
+                      <input [(ngModel)]="apprenant.nom" type="text" name="nom" class="form-control" id="inputEmail4" autofocus>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Prenom</label>
+                      <input [(ngModel)]="apprenant.prenom" type="text" class="form-control" name="prenom" id="inputPassword4" >
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input [(ngModel)]="apprenant.email" type="email" class="form-control" name="email"  id="inputemail" placeholder="exemple.isepdiamniadio.edu.sn">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="adresse" class="form-label">Adresse</label>
+                      <input [(ngModel)]="apprenant.adresse" type="text" name="adresse" class="form-control" id="inputAdresse" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputState" class="form-label">Departement</label>
+                      <select id="inputState" [(ngModel)]="apprenant.departement" name="departement" class="form-select">
+                        <option *ngFor="let item of listDepartement()" value="{{item.nomDept}}">{{item.nomDept}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputState" class="form-label">Filiere</label>
+                      <select id="inputState" [(ngModel)]="apprenant.filiere" name="filiere" class="form-select">
+                          <option *ngFor="let item of getList()" value="{{item.nomFormation}} ">{{item.nomFormation}} </option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputState" class="form-label">Promotion</label>
+                      <select id="inputState" [(ngModel)]="apprenant.promotion" name="promotion" class="form-select">
+                        <option>Promo 1</option>
+                        <option>Promo 2</option>
+                        <option>Promo 3</option>
+                        <option>Promo 4</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" routerLink="/ajoutapprenant" class="btn btn-primary col-12">Enregistrer</button>
+                    </div>
+                  </form>
+                  
+                </div>
+            </div>
+          </div>
+    
+    </body>
+    
+    
+    
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     
+      <style>
+        .form-label {
+          position: relative;
+        }
+    
+        .form-label::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+    
+        
+        .form-label i {
+          position: absolute;
+          top: 0;
+          left: -30px;
+          font-size: 18px;
+          color: #888;
+          line-height: 1;
+          transform: translateY(-50%);
+        }
+    
+    
+        .btn-primary {
+          margin-top: 20px;
+        }
+    
+        .form-label {
+          position: relative;
+        }
+    
+        .form-label::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+    
+        .form-label i {
+          position: absolute;
+          top: 0;
+          left: -30px;
+          font-size: 18px;
+          color: #888;
+          line-height: 1;
+          transform: translateY(-50%);
+        }
+    
+    
+        /* Nouveau code CSS ajouté */
+        .form-header {
+          background-color: #f2f2f2;
+          padding: 20px;
+          border-radius: 10px 10px 0 0;
+        }
+    
+        .form-control {
+          padding: 10px;
+        }
+    
+      </style>
+    
+    

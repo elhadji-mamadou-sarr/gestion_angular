@@ -1,0 +1,226 @@
+
+<app-menu></app-menu>
+<div class="container" style="margin-top: 5%;">
+   
+    <div class="employee-list">
+
+        <div class="btn">
+            <button class="btn btn-success" routerLink="/ajoutapprenant">+ Nouveau</button>
+        </div>
+
+        <div class="border border-primary box-container">
+          
+          <div *ngFor="let apprenant of apprenants">
+
+              <div class="box" >
+                <div class="card" style="width: 15rem;">
+                   <!-- <img employee-image src="assets/image/elhadji.jpg" class="card-img-top" alt="...">-->
+                    <div class="card-body">
+                      <h5 class="card-title">{{apprenant.nom}} {{apprenant.prenom}}</h5>
+                      <h5 class="card-title">{{apprenant.email}}</h5>
+                      <h5 class="card-title">{{apprenant.filiere}}</h5>
+                     
+                    <div class="buttons">
+                      <button class="btn btn-primary" 
+                      [routerLink]="['/detail']" [queryParams]="{num: apprenant.id}">Détail</button>&nbsp;
+                    
+                      <button class="btn btn-danger" (click)="supprimerApprenant(apprenant.id)">Supprimer</button>&nbsp;
+                    
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+           </div>
+        </div>
+
+        <!--
+        <div class="box-container">
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/elhadji.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">El hadji M. Sarr</h5>
+                      <h5 class="card-title">DBE</h5>
+                     <div class="buttons">
+                        <button class="btn btn-primary" routerLink="/detail">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem; ">
+                    <img employee-image src="assets/image/ba.jpg" class="card-img-top" alt="..." >
+                    <div class="card-body">
+                      <h5 class="card-title">Mamadou ba</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/astou.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Aissatou Niass </h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/momo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">El hadji M. Sarr</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/ndour.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Adja M. Ndour</h5>
+                      <h5 class="card-title">DFE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/res.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">fatoumata Kanoute</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/sarr.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">El hadji M. Sarr</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/arame.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Arame Thiam</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/astou.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">El hadji M. Sarr</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="box" >
+                <div class="card" style="width: 15rem;">
+                    <img employee-image src="assets/image/momo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">El hadji M. Sarr</h5>
+                      <h5 class="card-title">DBE</h5>
+                      <div class="buttons">
+                        <button class="btn btn-primary">Modifier</button>&nbsp;
+                        <button class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+        -->
+    </div>
+
+</div>
+
+<style>
+    
+
+    .employee-image {
+        width: 200px; /* Définissez ici la largeur souhaitée pour toutes les images */
+        height: auto;
+      }
+    
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-between;
+      }
+      
+      .box {
+        margin-bottom: 20px;
+        background-color: #f1f1f1;
+        padding: 5px;
+        text-align: center;
+        border: solid 1px #eee;
+        border-radius: 5px;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 200px; /* Ajustez la hauteur selon vos besoins */
+        object-fit: cover;
+      }
+  
+  .employee-image {
+    width: 200px; /* Définissez ici la largeur souhaitée pour toutes les images */
+    height: auto;
+  }
+
+</style>
+
+<script>
+
+
+
+
+</script>

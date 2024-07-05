@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div>
+    className:{{nomform.className|json}}<br>
+    nomFormModel={{nomFormModel.errors|json}}
+</div>
+<div class="container">
+        <div class="mx-auto p-4" style="width: 800px; margin-top: 7%; border: solid 1px; border-radius: 10px;">
+            <div [ngClass]="styleTitle">
+                <h1>Ajouter unfcgvhbgbh Formateur</h1>
+            </div>
+            <form #formateurForm="ngForm" class="row g-3" [class.gb.success]="formOk" [class.gb.danger]="formOk">
+                <div class="bg-secondary text-light">
+                {{formateurForm.value|json}}
+            </div>
+                <div class="col-md-6">
+                    <label for="inputNom" class="form-label">Nom</label>
+                    <input  #nomform #nomFormModel="ngModel" [(ngModel)]="formateur.nom" type="text" name="nom"  id="inputNom" required="true">
+                    
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Prenom</label>
+                    <input  type="text" class="form-control" name="prenom" id="inputPassword4" >
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input  type="email" class="form-control" name="email"  [value]="borderForm" id="inputemail" placeholder="exemple.isepdiamniadio.edu.sn">
+                </div>
+                <div class="col-md-6">
+                <label for="adresse" class="form-label">Adresse</label>
+                <input  type="text" name="adresse" class="form-control" id="inputAdresse" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-12">
+                <label for="inputState" class="form-label">Formation</label>
+                <select id="inputState" name="departement" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Dev web</option>
+                    <option>Digital Marketing</option>
+                </select>
+                </div>
+                <div class="col-12">
+                <button type="submit" routerLink="/ajouterFormateur" class="btn btn-primary col-12">Enregistrer</button>
+                </div>
+            </form>
+          
+        </div>
+</div>

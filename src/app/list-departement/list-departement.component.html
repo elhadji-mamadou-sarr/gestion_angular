@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="title" style="display: flex; justify-content: space-between; margin-top: 3%;">
+            <h2>Liste des Departements</h2>
+            <button routerLink="/ajoutDepartement" class="btn btn-success">+Nouveau Departement</button>
+        </div>
+        <table class="table table-hover table-striped" style="margin-top: 3%;">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th>Nom departement</th>
+                    <th>Nombre de filiere</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let departement of departements">
+                        <td>{{departement.code}}</td>
+                        <td>{{departement.nomDept}}</td>
+                        <td>{{departement.nbrFiliere}}</td>
+                        <td><button class="btn btn-outline-success" 
+                            [routerLink]="['/detailFormation']" [queryParams]="{num : departement.code}">Detail</button>&nbsp;
+                            <button class="btn btn-outline-primary" routerLink="">Modifier</button>&nbsp;
+                            <button class="btn btn-outline-danger" (click)="supprimerDept(departement.code)" routerLink="">Supprimer</button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
+
